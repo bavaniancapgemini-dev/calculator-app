@@ -5,3 +5,16 @@ def save_history(text):
     file.write(text + "\n")
 
     file.close()
+
+def show_history():
+
+    file = open("calculation_history.txt", "r")
+
+    history = file.readlines()
+
+    file.close()
+
+    print("\n---- HISTORY ----")
+
+    for item in history:
+        print(item.strip())
