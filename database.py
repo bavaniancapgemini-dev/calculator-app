@@ -29,3 +29,19 @@ def save_to_database(text):
     connection.commit()
 
     connection.close()
+
+def view_database_history():
+
+    import sqlite3
+
+    connection = sqlite3.connect("calculator.db")
+
+    cursor = connection.cursor()
+
+    cursor.execute("SELECT * FROM history")
+
+    data = cursor.fetchall()
+
+    connection.close()
+
+    return data
